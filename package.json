@@ -1,20 +1,23 @@
 {
-  "name": "singep-node",
+  "name": "sigep-node",
   "version": "1.0.0",
-  "description": "Modulo para trabalhar com o SIMGEP dos correios",
+  "description": "Modulo para trabalhar com o SIGEP dos correios",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "(https://github.com/waldsonvital/singep-node)"
+    "url": "https://github.com/waldsonvital/sigep-node"
   },
   "keywords": [
-    "singep",
+    "sigep",
     "correios",
     "etiquetas"
   ],
   "author": "Waldson Vital Dos Santos",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "strong-soap": "^1.21.0"
+  }
 }

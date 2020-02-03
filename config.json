@@ -1,0 +1,8 @@
+{
+    "development": {
+        "url": "https://apphom.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl"
+    },
+    "production": {
+        "url": "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl"
+    }
+}
