@@ -1,6 +1,7 @@
 //import module
 const mod = require('../index')
 
+//dodos da documentação dos correios
 const SIGEP = mod.init({
     usuario: 'sigep',
     senha: 'n5f9t8',
@@ -31,10 +32,24 @@ describe('sigep tests', () => {
         })
     })
 
-    it('Service availability between the source zip code and destination zip code:',async () => {
+    it('Service availability between the source zip code and destination zip code:', async () => {
         let disp = await SIGEP.verificaDisponibilidadeServico({
             cepDestino: '09720-010',
             numeroServico: '40215'
+        })
+
+        expect( disp ).toMatchObject({
+            status: expect.any(Boolean),
+            message: expect.any(String)
+        })
+    })
+
+    it('check availability card post', async () => {
+        let card = await SIGEP.verificarStatusCartaoPostagem()
+
+        expect( card).toMatchObject({
+            status: expect.any(Boolean),
+            situacao: expect.any(String)
         })
     })
 })

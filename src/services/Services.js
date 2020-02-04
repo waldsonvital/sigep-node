@@ -5,6 +5,7 @@ const helpers = require('../class/helpers')
 const BuscaClienteService = require('../class/BuscaCliente')
 const ConsultaCEPService = require('../class/ConsultaCep')
 const VerificaDispService = require('../class/VerificaDisponibilidadeServico')
+const VerificaDispCardService = require('../class/verificaStatusCartaoPostagem')
 
 /**
  * @class: Services
@@ -84,8 +85,20 @@ class Services {
 
     }
 
-    verificarStatusCartaoPostagem = () => {
+    /**
+     * Verifica a disponibilidade do cartão de postagem
+     *
+     * @params {String} idCartaoPostagem Campo não obrigatorio do id do cartão de postagem
+     * @returns {Object}
+     */
+    verificarStatusCartaoPostagem = async ( idCartaoPostagem = null ) => {
+        let user = this.user.getUser()
 
+        if( idCartaoPostagem ){
+            user.idCartaoPostagem = idCartaoPostagem
+        }
+
+        return await VerificaDispCardService( user )
     }
 
     bloquearObjeto = () => {
