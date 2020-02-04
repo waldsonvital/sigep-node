@@ -47,7 +47,37 @@ class Init {
         }
     }
 
-    setClienteData = ( data ) => {
+    getContrato = ( idContrato = null ) => {
+        return this.clienteData.contratos.find(( val ) => {
+            if(idContrato){
+                return val.contratoPK.numero === idContrato
+            }
+
+            return val.contratoPK.numero === this.idContrato
+        })
+    }
+
+    getServicos = ( idCartaoPostagem ) => {
+        let cartao = null
+        if( idCartaoPostagem ){
+            cartao = this.getContrato().cartoesPostagem.find(( val ) => {
+                return val.numero === idCartaoPostagem
+            })
+        }else{
+            cartao = this.getContrato().cartoesPostagem.find(( val ) => {
+                return val.numero === this.idCartaoPostagem
+            })
+
+        }
+
+        if(cartao){
+            return cartao.servicos
+        }else{
+            throw Error("Não foi encontrado cartão de postagem")
+        }
+    }
+
+    _setClienteData = ( data ) => {
         this.clienteData = {
             ...this.clienteData,
             ...data
