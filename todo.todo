@@ -1,11 +1,11 @@
 Criar modulos essenciais:
     ✔ consultarCEP @done (2020-02-04 15:05)
     ✔ verificaDisponibilidadeServico @done (2020-02-04 15:06)
-    ☐ verificarStatusCartaoPostagem
-    ☐ solicitaEtiquetas
+    ✔ verificarStatusCartaoPostagem @done (2020-02-06 09:43)
+    ✔ solicitaEtiquetas @done (2020-02-06 09:44)
     ☐ geraDigitoVerificadorEtiquetas
     ☐ fechaPlpVariosServicos
-    ☐ calcPrecoPrazo
+    ✔ calcPrecoPrazo @done (2020-02-06 09:43)
     ✔ buscaCliente @done (2020-02-04 15:06)
     ☐ rastrearObjeto
     ☐ bloquearObjeto

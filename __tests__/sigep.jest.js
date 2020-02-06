@@ -75,26 +75,32 @@ describe('sigep tests', () => {
         })
     })
 
-    it('Request time and price to shipping', async () => {
-        let calc = await SIGEP.calcPrecoPrazo({
-            nCdEmpresa: '',
-            sDsSenha: '',
-            nCdServico: '04014',
-            sCepOrigem: '30170-010',
-            sCepDestino: '04538-132',
-            nVlPeso: .01,
-            nCdFormato: 3,
-            nVlComprimento: 0,
-            nVlAltura: 5,
-            nVlLargura: 5,
-            nVlDiametro: 0,
-            sCdMaoPropria: 'N',
-            nVlValorDeclarado: 0,
-            sCdAvisoRecebimento: 'N'
-        })
+    //it('Request time and price to shipping', async () => {
+        //let calc = await SIGEP.calcPrecoPrazo({
+            //nCdEmpresa: '',
+            //sDsSenha: '',
+            //nCdServico: '04014',
+            //sCepOrigem: '30170-010',
+            //sCepDestino: '04538-132',
+            //nVlPeso: .01,
+            //nCdFormato: 3,
+            //nVlComprimento: 0,
+            //nVlAltura: 5,
+            //nVlLargura: 5,
+            //nVlDiametro: 0,
+            //sCdMaoPropria: 'N',
+            //nVlValorDeclarado: 0,
+            //sCdAvisoRecebimento: 'N'
+        //})
 
-        expect(calc).toMatchObject({
-            Erro: '0',
-        })
+        //expect(calc).toMatchObject({
+            //Erro: '0',
+        //})
+    //})
+
+    it('generate check digit to tags', async () => {
+        //SZ804191112BR
+        let digito = SIGEP.geraDigitoVerificadorEtiquetas([ 'SZ80419111 BR', 'SZ80419112 BR' ])
+        console.log( digito )
     })
 })

@@ -8,6 +8,7 @@ const VerificaDispService = require('../services/VerificaDisponibilidadeServico'
 const VerificaDispCardService = require('../services/verificaStatusCartaoPostagem')
 const SolicitarEtiquetas = require('../services/SolicitaEtiquetas')
 const CalcPrecoPrazo = require('../services/CalcPrecoPrazo')
+const { geraDigito, callGerarDigitos } = require('../services/GeraDigitoVerificador')
 
 /**
  * @class: Services
@@ -67,8 +68,10 @@ class Services {
         }
     }
 
-    geraDigitoVerificadorEtiquetas = () => {
-
+    geraDigitoVerificadorEtiquetas = ( listTags ) => {
+        return listTags.map(( tag ) => {
+            return geraDigito(tag)
+        })
     }
 
     fechaPlpVariosServicos = () => {
