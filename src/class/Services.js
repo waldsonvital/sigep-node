@@ -1,11 +1,13 @@
 /**
  * @author: waldson Vital
  */
-const helpers = require('../class/helpers')
-const BuscaClienteService = require('../class/BuscaCliente')
-const ConsultaCEPService = require('../class/ConsultaCep')
-const VerificaDispService = require('../class/VerificaDisponibilidadeServico')
-const VerificaDispCardService = require('../class/verificaStatusCartaoPostagem')
+const helpers = require('./helpers')
+const BuscaClienteService = require('../services/BuscaCliente')
+const ConsultaCEPService = require('../services/ConsultaCep')
+const VerificaDispService = require('../services/VerificaDisponibilidadeServico')
+const VerificaDispCardService = require('../services/verificaStatusCartaoPostagem')
+const SolicitarEtiquetas = require('../services/SolicitaEtiquetas')
+const CalcPrecoPrazo = require('../services/CalcPrecoPrazo')
 
 /**
  * @class: Services
@@ -50,8 +52,19 @@ class Services {
         return result
     }
 
-    solicitaEtiquetas = () => {
+    solicitaEtiquetas = async (data) => {
+        let userData = this.user.getUser()
+        let params = {
+            ...userData,
+            ...data
+        }
 
+        let result = await SolicitarEtiquetas( params )
+
+        return {
+            status: result.length? true : false,
+            data: result
+        }
     }
 
     geraDigitoVerificadorEtiquetas = () => {
@@ -62,8 +75,33 @@ class Services {
 
     }
 
-    calcPrecoPrazo = () => {
+    /**
+     * Calcula o Prazo e Valor do Frete
+     *
+     * @params {Object} params
+     *
+     * campos do objeto:
+     * nCdEmpresa - numero do contrato ( não obrigatório - envie '' )
+     * sDsSenha - senha do contrato, pode ser os 8 primeiros digitos do CNPJ ( não obrigatório - envie '' )
+     * nCdServico - código do serviço
+     * sCepOrigem - CEP de origem
+     * sCepDestino - CEP de Destino
+     * nVlPeso - Decimal ex: 1 = 1kg
+     * nCdFormato - 1 – Formato caixa/pacote, 2 – Formato rolo/prisma, 3 – Envelope
+     * nVlComprimento - Decimal ex: 1 = 1cm
+     * nVlAltura = Decimal ex: 1 = 1cm
+     * nVlLargura = Decimal ex: 1 = 1cm
+     * nVlDiametro = Decimal ex: 1 = 1cm
+     * sCdMaoPropria = "S" = sim, "N" = não
+     * nVlValorDeclarado = Decimal ex: 1 = R$1,00
+     * sCdAvisoRecebimento = "S" = sim, "N" = não
+     */
+    calcPrecoPrazo = async ( params ) => {
+        //limpa os ceps
+        params.sCepOrigem = helpers.clearCEP( params.sCepOrigem )
+        params.sCepDestino = helpers.clearCEP( params.sCepDestino )
 
+        return await CalcPrecoPrazo( params )
     }
 
     /**

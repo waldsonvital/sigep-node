@@ -3,7 +3,7 @@
  */
 
 //class
-const User = require('./src/services/User')
+const User = require('./src/class/User')
 
 module.exports = {
     /**

@@ -18,5 +18,5 @@ module.exports = async ( data ) => {
         result = result[0]
     }
 
-    return result.retun === 'Normal'? { status: true, situacao: 'Normal' } : { status: false, situacao: 'Cancelado' }
+    return result.return === 'Normal'? { status: true, situacao: 'Normal' } : { status: false, situacao: 'Cancelado' }
 }
