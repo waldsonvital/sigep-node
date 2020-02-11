@@ -3,7 +3,7 @@
  */
 
 //class
-const User = require('./src/class/User')
+const User = require('./lib/class/User')
 
 module.exports = {
     /**

@@ -18,6 +18,10 @@
   "author": "Waldson Vital Dos Santos",
   "license": "ISC",
   "dependencies": {
+    "bwip-js": "^2.0.6",
+    "jsdom": "^16.1.0",
+    "libxmljs": "^0.19.7",
+    "puppeteer": "^2.1.1",
     "soap": "^0.30.0",
     "xml-js": "^1.6.11"
   },

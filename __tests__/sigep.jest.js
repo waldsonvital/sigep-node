@@ -9,7 +9,7 @@ const SIGEP = mod.init({
     idContrato: '9992157880',
     idCartaoPostagem: '0067599079',
     identificador: '34028316000103', //cnpj,
-    cepOrigem: '13469740'
+    cepOrigem: '70002-900'
 })
 
 describe('sigep tests', () => {
@@ -67,7 +67,7 @@ describe('sigep tests', () => {
             idServico: '124849'
         })
 
-        //console.log( "solicitaEtiquetas", tags )
+        console.log( "solicitaEtiquetas", tags )
 
         expect( tags ).toMatchObject({
             status: expect.any(Boolean),
@@ -100,7 +100,106 @@ describe('sigep tests', () => {
 
     it('generate check digit to tags', async () => {
         //SZ804191112BR
-        let digito = SIGEP.geraDigitoVerificadorEtiquetas([ 'SZ80419111 BR', 'SZ80419112 BR' ])
+        let digito = SIGEP.geraDigitoVerificadorEtiquetas([ 'SZ80568961 BR', 'SZ80568962 BR' ])
         console.log( digito )
+    })
+
+    it('generate PLP fot tags', async () => {
+        // console.log("[ 'SZ80467822 BR', 'SZ80467823 BR' ]")
+        let json = {
+            correioslog:{
+                tipo_arquivo: 'Postagem',
+                versao_arquivo: 2.3,
+                plp: {
+                    id_plp: '',
+                    valor_global: '',
+                    mcu_unidade_postagem: '',
+                    nome_unidade_postagem: '',
+                    cartao_postagem: '0067599079'
+                },
+                remetente:{
+                    numero_contrato: '9992157880',
+                    numero_diretoria: '10',
+                    codigo_administrativo: '17000190',
+                    nome_remetente: 'Empresa Teste',
+                    logradouro_remetente: 'Avenida Central',
+                    numero_remetente: '2370',
+                    complemento_remetente:'Sala 1205, 12°andar',
+                    bairro_remetente:'Centro',
+                    cep_remetente: '80002900',
+                    cidade_remetente:'Curitiba',
+                    uf_remetente:'PR',
+                    telefone_remetente:'4130795008',
+                    fax_remetente:'4191239321',
+                    email_remetente:'cli@mail.com.br',
+                    celular_remetente:'',
+                    // cpf_cnpj_remetente:"12345678901234",
+                    // ciencia_conteudo_proibido: 'S'
+                },
+                forma_pagamento: '5',
+                objeto_postal:[
+                    {
+                        numero_etiqueta: 'SZ805689629BR',
+                        // sscc: '',
+                        codigo_objeto_cliente:'',
+                        codigo_servico_postagem:'41068',
+                        cubagem: '0,00',
+                        peso:'2',
+                        rt1:'',
+                        rt2:'',
+                        destinatario:{
+                            nome_destinatario: 'waldson vital',
+                            telefone_destinatario: '6232339644',
+                            celular_destinatario:'62991239321',
+                            email_destinatario:'waldsson@gmail.com',
+                            logradouro_destinatario: 'Rua Humberto polo',
+                            complemento_destinatario:'Sobrado',
+                            numero_end_destinatario:'91',
+                            // cpf_cnpj_destinatario:'',
+                            // restricao_anac:'S'
+                        },
+                        nacional:{
+                            bairro_destinatario:'Sao Jeronimo',
+                            cidade_destinatario:'Americana',
+                            uf_destinatario:'SP',
+                            cep_destinatario:'13469740',
+                            codigo_usuario_postal:'',
+                            centro_custo_cliente:'',
+                            numero_nota_fiscal:'',
+                            serie_nota_fiscal:'',
+                            valor_nota_fiscal:'',
+                            natureza_nota_fiscal:'',
+                            descricao_objeto:'',
+                            valor_a_cobrar:'',
+                        },
+                        servico_adicional:{
+                            codigo_servico_adicional:[ '025' ],
+                            valor_declarado:''
+                        },
+                        dimensao_objeto:{
+                            tipo_objeto:'001',
+                            dimensao_altura:'2',
+                            dimensao_largura:'11',
+                            dimensao_comprimento:'16',
+                            dimensao_diametro:'5'
+                        },
+                        data_postagem_sara:'',
+                        status_processamento:'0',
+                        numero_comprovante_postagem: '',
+                        valor_cobrado: '0'
+                    },
+
+                ],
+            }
+        }
+
+        // [ 'SZ804678222BR', 'SZ804678236BR' ]
+        //console.log( SIGEP.user.getUser().cl ienteData.contratos )
+        let codigo = await SIGEP.fechaPlpVariosServicos({ json, idPlpCliente: '132678', listaEtiquetas: [ 'SZ80568962BR' ] })
+        console.log( codigo)
+    })
+
+    it('get JSON PLP correios', async () => {
+        await SIGEP.solicitaJsonPlp('43945087')
     })
 })
