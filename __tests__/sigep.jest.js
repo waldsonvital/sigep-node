@@ -16,7 +16,7 @@ describe('sigep tests', () => {
     it('Get client SIGEP:', async () => {
         let data = await SIGEP.buscaCliente()
 
-        //console.log( "buscaCliente", data )
+        console.log( "buscaCliente", SIGEP.user.clienteData.contratos[0].cartoesPostagem[0].servicos )
 
         expect(data).toMatchObject({
             cnpj: expect.any(String),

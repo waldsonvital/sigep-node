@@ -54,7 +54,7 @@ const jsonPLP = {
                     bairro_destinatario:'Sao Jeronimo',
                     cidade_destinatario:'Americana',
                     uf_destinatario:'SP',
-                    cep_destinatario:'13469740',
+                    cep_destinatario:'13469730',
                     codigo_usuario_postal:'',
                     centro_custo_cliente:'',
                     numero_nota_fiscal:'',
@@ -116,7 +116,7 @@ const jsonPLP = {
                     valor_a_cobrar:'',
                 },
                 servico_adicional:{
-                    codigo_servico_adicional:[ '025' ],
+                    codigo_servico_adicional:[ '025', '001' ],
                     valor_declarado:''
                 },
                 dimensao_objeto:{
@@ -134,6 +134,7 @@ const jsonPLP = {
         ],
     }
 }
+
 const path = require('path')
 const dir = path.dirname(__dirname)
 const SIGEPPDF = require('../index').pdfPLP( '44022831', jsonPLP, dir + '/__tests__/tmp/', 'teste_sigep'  )
@@ -147,6 +148,7 @@ describe('Print tags', () => {
     })
 
     it('generate pdf tags', async () => {
-        await SIGEPPDF.tagsToPDF()
+        await SIGEPPDF.tagsToPDF( dir + '/__tests__/tmp/arquivo.pdf' )
+        await SIGEPPDF.voucherToPDF( dir + '/__tests__/tmp/arquivo_voucher.pdf', '20/01/2020' )
     })
 })

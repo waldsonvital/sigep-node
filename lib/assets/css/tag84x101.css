@@ -7,12 +7,12 @@
 
 .tag{
     width: 101.6mm;
-    height: 84.7mm;
-    border: 1px solid black;
+    height: 84.6mm;
+    /*border: 1px solid black;*/
 }
 
 .destinatario{
-    height: 20mm;
+    height: 19.5mm;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -29,7 +29,7 @@
 }
 
 .codes .codigo-rastreamento{
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .codes .postagem-infos{
@@ -49,8 +49,7 @@
 }
 
 .codes .contrato{
-    margin-top: 2mm;
-    /*margin-bottom: 1mm*/
+    margin-top: 1mm;
 }
 
 .codes .codigo-rastreamento{
@@ -84,7 +83,6 @@
 #datamatrix, .datamatrix{
     width: 25mm;
     height: 25mm;
-    background: #ccc;
 }
 
 .barcode{
@@ -92,7 +90,6 @@
     height: 18mm;
     margin-left: 5mm;
     margin-right: 5mm;
-    background: #ccc;
 }
 .row.code-barcode{
     display: flex;
@@ -180,7 +177,6 @@
 .cep-bar{
     width: 40mm;
     height: 18mm;
-    background: #ccc;
     margin-top: 1mm;
 }
 
@@ -198,4 +194,31 @@
 
 .remetente .row{
     display: flex;
+}
+
+.barcode img{
+  height: 18mm;
+  width: 80mm
+}
+
+.barcode-cep img{
+  height: 18mm;
+  width: 40mm;
+}
+
+.datamatrix img{
+  width: 25mm;
+}
+
+@media print {
+    .tag{
+        /*clear: both;*/
+        page-break-after: always;
+    }
+
+    *{
+        padding: 0px;
+        margin: 0px;
+        font-family: Open Sans;
+    }
 }
