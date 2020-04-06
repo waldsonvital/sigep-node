@@ -94,3 +94,20 @@ SIGEP.rastrearObjeto();
 SIGEP.cancelarObjeto();
 
 ```
+
+# IMPRESSÃO
+
+Por enquanto os pdf das etiquetas são feitas com [puppeteer](https://github.com/puppeteer/puppeteer/) e html, nesse momento tem apenas a etiqueta pequena outro modelos em breve.
+
+```javascript
+//exemplo __tests__/etiquetas.jest.js
+const jsonPLP = {} //o objeto JSON do plp enviado para o SIGEP
+
+const path = require('path')
+const dir = path.dirname(__dirname)
+const SIGEPPDF = require('sigep-js').pdfPLP( '44022831', jsonPLP, dir + '/__tests__/tmp/', 'teste_sigep'  )
+
+
+await SIGEPPDF.tagsToPDF( dir + '/__tests__/tmp/arquivo.pdf' )
+await SIGEPPDF.voucherToPDF( dir + '/__tests__/tmp/arquivo_voucher.pdf', '20/01/2020' )
+```
