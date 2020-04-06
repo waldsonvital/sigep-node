@@ -112,7 +112,7 @@ describe('sigep tests', () => {
                 tipo_arquivo: 'Postagem',
                 versao_arquivo: 2.3,
                 plp: {
-                    id_plp: '',
+                    id_plp: '44022831',
                     valor_global: '',
                     mcu_unidade_postagem: '',
                     nome_unidade_postagem: '',
@@ -149,10 +149,10 @@ describe('sigep tests', () => {
                         rt1:'',
                         rt2:'',
                         destinatario:{
-                            nome_destinatario: 'waldson vital',
+                            nome_destinatario: 'José teste da silva',
                             telefone_destinatario: '6232339644',
                             celular_destinatario:'62991239321',
-                            email_destinatario:'waldsson@gmail.com',
+                            email_destinatario:'js_teste@gmail.com',
                             logradouro_destinatario: 'Rua Humberto polo',
                             complemento_destinatario:'Sobrado',
                             numero_end_destinatario:'91',
@@ -163,7 +163,7 @@ describe('sigep tests', () => {
                             bairro_destinatario:'Sao Jeronimo',
                             cidade_destinatario:'Americana',
                             uf_destinatario:'SP',
-                            cep_destinatario:'13469740',
+                            cep_destinatario:'13469730',
                             codigo_usuario_postal:'',
                             centro_custo_cliente:'',
                             numero_nota_fiscal:'',
@@ -189,7 +189,7 @@ describe('sigep tests', () => {
                         numero_comprovante_postagem: '',
                         valor_cobrado: '0'
                     },
-
+        
                     {
                         numero_etiqueta: 'SZ806005348BR',
                         // sscc: '',
@@ -200,10 +200,10 @@ describe('sigep tests', () => {
                         rt1:'',
                         rt2:'',
                         destinatario:{
-                            nome_destinatario: 'waldson vital',
+                            nome_destinatario: 'Maria do Teste',
                             telefone_destinatario: '6232339644',
                             celular_destinatario:'62991239321',
-                            email_destinatario:'waldsson@gmail.com',
+                            email_destinatario:'maria_teste@gmail.com',
                             logradouro_destinatario: 'Rua Humberto polo',
                             complemento_destinatario:'Sobrado',
                             numero_end_destinatario:'91',
@@ -225,7 +225,7 @@ describe('sigep tests', () => {
                             valor_a_cobrar:'',
                         },
                         servico_adicional:{
-                            codigo_servico_adicional:[ '025' ],
+                            codigo_servico_adicional:[ '025', '001' ],
                             valor_declarado:''
                         },
                         dimensao_objeto:{

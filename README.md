@@ -1,6 +1,96 @@
 # SIGEP-JS - *DESENVOLVIMENTO*
 
-### Objetivo
+## Objetivo
+Uma camada para facilitar as chamadas para o sigep em NODE.
+
+## Instalação
+
+```
+npm install sigep-js
+```
+
+```
+yarn add sigep-js
+```
+
+## Metodos
+
+iniciando os serviços adicione as informações do contrato no init para ter acessos aos serviços
+
+```javascript
+const SIGEP = require("sigep-js").init({
+    usuario,
+    senha,
+    codAdministrativo,
+    idContrato,
+    idCartaoPostagem,
+    identificador, //cnpj
+    cepOrigem
+})
+```
+
+```javascript
+
+await SIGEP.verificaDisponibilidadeServico({ 
+    cepDestino, 
+    numeroServico, 
+    cepOrigem // opcional 
+});
+
+await SIGEP.consultaCEP( cep );
+
+await SIGEP.solicitaEtiquetas({
+    qtdEtiquetas
+    idServico
+});
 
 
- 
+SIGEP.geraDigitoVerificadorEtiquetas([ 'SZ80600533 BR', 'SZ80600534 BR' ]);
+
+//modelos JSON para ajudar na montagem do PLP - recomendado ler a documentaçao dos Correios
+let plp = SIGEP.PLPModel.plp
+let objPostal = SIGEP.PLPModel.objetoPostal
+
+/**
+ * A lista de etiquetas precisa estar na ordem do adicionado no JSON PLP
+ * ex: modelo exemplo em __tests__/etiquetas.jest.js
+ */
+await SIGEP.solicitaJsonPlp({
+    jsonPLP,
+    idPlpCliente,
+    listaEtiquetas //array, [ 'SZ80600533BR', 'SZ80600534BR' ] 
+})
+
+await SIGEP.calcPrecoPrazo({
+    nCdEmpresa, //não obrigatório
+    sDsSenha, //não obrigatório
+    nCdServico,
+    sCepOrigem,
+    sCepDestino,
+    nVlPeso, //Decimal ex: 1 = 1kg
+    nCdFormato, //1 – Formato caixa/pacote, 2 – Formato rolo/prisma, 3 – Envelope
+    nVlComprimento, //Decimal ex: 1 = 1cm
+    nVlAltura, //Decimal ex: 1 = 1cm
+    nVlLargura //Decimal ex: 1 = 1cm
+    nVlDiametro, //Decimal ex: 1 = 1cm
+    sCdMaoPropria, //"S" = sim, "N" = não
+    nVlValorDeclarado //Decimal ex: 1 = R$1,00
+    sCdAvisoRecebimento //"S" = sim, "N" = não
+});
+
+await SIGEP.buscaCliente();
+
+await SIGEP.verificarStatusCartaoPostagem( idCartaoPostagem //oprcional );
+
+await SIGEP.bloquearObjeto( 
+    etiqueta, 
+    idPLP
+);
+
+//BREVE
+SIGEP.rastrearObjeto();
+
+//BREVE
+SIGEP.cancelarObjeto();
+
+```
