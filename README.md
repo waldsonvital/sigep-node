@@ -1,7 +1,7 @@
 # SIGEP-JS - *DESENVOLVIMENTO*
 
 ## Objetivo
-Uma camada para facilitar as chamadas para o sigep em NODE.
+Uma camada para facilitar as chamadas para o sigep em NODE e geração pdf das etiquetas.
 
 ## Instalação
 
