@@ -5,6 +5,7 @@
 //class
 const User = require('./lib/class/User')
 const Print = require('./lib/class/PrintPDF')
+global.ENV_SIGEP = "production"
 
 module.exports = {
     /**
