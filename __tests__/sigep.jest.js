@@ -9,7 +9,8 @@ const SIGEP = mod.init({
     idContrato: '9992157880',
     idCartaoPostagem: '0067599079',
     identificador: '34028316000103', //cnpj,
-    cepOrigem: '70002-900'
+    cepOrigem: '70002-900',
+    env: "development"
 })
 
 describe('sigep tests', () => {
@@ -63,7 +64,7 @@ describe('sigep tests', () => {
 
     it('Request tags list', async () => {
         let tags = await SIGEP.solicitaEtiquetas({
-            qtdEtiquetas: 2,
+            qtdEtiquetas: 6,
             idServico: '124849'
         })
 
@@ -189,7 +190,7 @@ describe('sigep tests', () => {
                         numero_comprovante_postagem: '',
                         valor_cobrado: '0'
                     },
-        
+
                     {
                         numero_etiqueta: 'SZ806005348BR',
                         // sscc: '',
