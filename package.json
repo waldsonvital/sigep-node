@@ -1,41 +1,22 @@
 {
-  "_from": "git://github.com/waldsonvital/sigep-node.git",
-  "_id": "sigep-js@0.10.9",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/sigep-js",
-  "_phantomChildren": {
-    "@types/mime-types": "2.1.0",
-    "debug": "4.1.1",
-    "extract-zip": "1.6.7",
-    "mime-types": "2.1.26",
-    "progress": "2.0.3",
-    "proxy-from-env": "1.0.0",
-    "rimraf": "2.7.1",
-    "ws": "6.2.1"
+  "name": "sigep-js",
+  "version": "0.10.9",
+  "description": "Modulo para trabalhar com o SIGEP dos correios",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
   },
-  "_requested": {
+  "repository": {
     "type": "git",
-    "raw": "git://github.com/waldsonvital/sigep-node.git",
-    "rawSpec": "git://github.com/waldsonvital/sigep-node.git",
-    "saveSpec": "git://github.com/waldsonvital/sigep-node.git",
-    "fetchSpec": "git://github.com/waldsonvital/sigep-node.git",
-    "gitCommittish": null
+    "url": "https://github.com/waldsonvital/sigep-node"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
+  "keywords": [
+    "sigep",
+    "correios",
+    "etiquetas"
   ],
-  "_resolved": "git://github.com/waldsonvital/sigep-node.git#2983104df16ede3c03851656355ef6f453049bc6",
-  "_spec": "git://github.com/waldsonvital/sigep-node.git",
-  "_where": "/Users/waldsonvital/Documents/projetos/integrar-api",
-  "author": {
-    "name": "Waldson Vital Dos Santos"
-  },
-  "bugs": {
-    "url": "https://github.com/waldsonvital/sigep-node/issues"
-  },
-  "bundleDependencies": false,
+  "author": "Waldson Vital Dos Santos",
+  "license": "ISC",
   "dependencies": {
     "bwip-js": "^2.0.6",
     "ejs": "^3.0.1",
@@ -44,28 +25,9 @@
     "soap": "^0.30.0",
     "xml-js": "^1.6.11"
   },
-  "deprecated": false,
-  "description": "Modulo para trabalhar com o SIGEP dos correios",
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
     "jest": "^25.1.0"
-  },
-  "homepage": "https://github.com/waldsonvital/sigep-node#readme",
-  "keywords": [
-    "sigep",
-    "correios",
-    "etiquetas"
-  ],
-  "license": "ISC",
-  "main": "index.js",
-  "name": "sigep-js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/waldsonvital/sigep-node.git"
-  },
-  "scripts": {
-    "test": "jest"
-  },
-  "version": "0.10.8"
+  }
 }
