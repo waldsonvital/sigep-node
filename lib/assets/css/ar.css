@@ -1,0 +1,210 @@
+*{
+    padding: 1px;
+    margin: 0px;
+    font-family: Open Sans;
+}
+
+.page{
+    max-width: 21cm;
+    /* padding: 10px; */
+}
+
+.wrapper-ar{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: .8cm 1fr;
+}
+
+.cole-aqui, .ar{
+    padding: 2px;
+    height: 350px;
+}
+
+.cole-aqui{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    border: 1px solid #000;
+
+}
+
+.cole-aqui .conjunto-span{
+    transform: rotate(-90deg);
+    transform-origin: 146px 146px;
+    width: 262px;
+    height: 44px;
+    display: table;
+}
+
+.conjunto-span span{
+    padding: 0px 30px;
+}
+
+.header-cr{
+    grid-area: head;
+}
+
+
+
+.tentativa-cr{
+    grid-area: tenta;
+}
+
+.carimbo-cr{
+    grid-area: carim;
+}
+
+.rubrica-cr{
+    grid-area: rubri;
+}
+
+.assinatura-cr{
+    grid-area: assin;
+}
+
+.nome-cr{
+    grid-area: nome;
+}
+
+.data-cr{
+    grid-area: data;
+}
+
+.doc-cr{
+    grid-area: doc;
+}
+
+.ar{
+    border: 0.5px solid #000;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas:
+    "head head head head head head head head head head head head"
+    "dest dest dest dest dest dest tenta tenta tenta tenta carim carim"
+    "dest dest dest dest dest dest tenta tenta tenta tenta carim carim"
+    "dest dest dest dest dest dest tenta tenta tenta tenta carim carim"
+    "dest dest dest dest dest dest tenta tenta tenta tenta carim carim"
+    "dest dest dest dest dest dest tenta tenta tenta tenta carim carim"
+    "dest dest dest dest dest dest tenta tenta tenta tenta rubri rubri"
+    "dest dest dest dest dest dest tenta tenta tenta tenta rubri rubri"
+    "dest dest dest dest dest dest tenta tenta tenta tenta rubri rubri"
+    "dest dest dest dest dest dest tenta tenta tenta tenta rubri rubri"
+    "assin assin assin assin assin assin assin assin data data rubri rubri"
+    "nome nome nome nome nome nome nome nome doc doc rubri rubri";
+}
+
+.ar div{
+    border: 0.1px solid #000;
+    padding: 5px;
+}
+
+label{
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.destinatario-cr .destinatario-wrapper div{
+    border: 0px solid !important;
+    padding: 0px;
+}
+
+
+.tentativa-cr{
+    /*max-height: 285px;*/
+}
+
+.ar .observacao-cr{
+    grid-area: obs;
+    border-top: 1px solid #000 !important;
+    padding: 0px;
+}
+
+.destinatario-wrapper{
+    grid-area: des_wrap;
+
+}
+
+.destinatario-cr{
+    grid-area: dest;
+    padding: 0px !important;
+    margin: 0px;
+    border: 0px solid !important;
+    /*max-height: 285px;*/
+
+    display: grid;
+    grid-template-areas:
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "des_wrap"
+    "obs"
+}
+
+.destinatario-endereco{
+    font-size: 8px;
+}
+
+.barcode-plp-box{
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.barcode-plp-box .code-value{
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.remetente-box{
+    font-size: 8px;
+    margin-top: 5px;
+}
+
+.label-min {
+    font-size: 6px !important;
+    line-height: 1;
+    display: block;
+    height: 20px;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+.rubrica-cr .label-min {
+    text-align: center;
+    padding-left: 0px;
+}
+
+.nome-cr, .assinatura-cr, .data-cr, .doc-cr, .rubrica-cr, .tentativa-cr{
+    padding: 0px !important;
+}
+
+.tentativa-cr .label-min{
+    font-weight: 600;
+    font-size: 11px !important;
+}
+
+.tentativa-cr .tentativas-history, .tentativa-cr .tentativas-history div{
+    border: 0px solid !important;
+    padding:  0px;
+}
+
+.tentativa-cr .tentativas-history div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.tentativa-cr .tentativas-history div span{
+    padding-left: 15px;
+}
