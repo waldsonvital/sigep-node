@@ -24,7 +24,7 @@
     display: flex;
     flex-direction: row;
     font-size: 14px;
-    border: 1px solid #000;
+    border: 2px solid #000;
 
 }
 
@@ -193,7 +193,7 @@ label{
     font-size: 11px !important;
 }
 
-.tentativa-cr .tentativas-history, .tentativa-cr .tentativas-history div{
+.tentativa-cr .tentativas-history, .tentativa-cr .tentativas-history div, .tentativa-cr .motivacao, .tentativa-cr .motivacao div{
     border: 0px solid !important;
     padding:  0px;
 }
@@ -207,4 +207,68 @@ label{
 
 .tentativa-cr .tentativas-history div span{
     padding-left: 15px;
+}
+
+.tentativa-cr .motivacao{
+    padding-top: 35px;
+    font-size: 8px;
+    font-weight: 300;
+}
+
+.tentativa-cr .motivacao .grid-motivos span, .tentativa-cr .motivacao .outro span{
+    margin-right: 10px;
+    padding-left: 15px;
+}
+
+.tentativa-cr .motivacao .grid-motivos{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.tentativa-cr .motivacao .grid-motivos div, .tentativa-cr .motivacao .outro{
+    margin-top: 8px;
+}
+
+.tentativa-cr .motivacao .label-min{
+    font-weight: 400;
+}
+
+.header-cr{
+    padding: 0px !important;
+    display: grid;
+    grid-template-columns: repeat( 4, 1fr );
+    /* max-height: 24px; */
+}
+.header-cr div{
+    padding: 0px !important;
+    border: 0px solid !important;
+}
+
+.header-cr img{
+    max-height: 20px;
+    margin-left: 30px;
+    padding-top: 2px;
+}
+
+.texto-sigep{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-weight: 600;
+}
+
+.texto-sigep .large{
+    font-size: 24px !important;
+    line-height: 1;
+    padding: 2px;
+}
+
+.texto-sigep .small{
+    font-size: 12px !important;
+    line-height: 1;
+    padding: 2px 0px 0px 5px;
+}
+
+.header-cr .contrato{
+    font-size: 12px !important;
+    padding-top: 5px !important;
 }
