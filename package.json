@@ -1,6 +1,6 @@
 {
   "name": "sigep-js",
-  "version": "0.13.1",
+  "version": "0.13.3",
   "description": "Modulo para trabalhar com o SIGEP dos correios",
   "main": "index.js",
   "scripts": {
@@ -20,8 +20,8 @@
   "dependencies": {
     "bwip-js": "^2.0.6",
     "ejs": "^3.0.1",
-    "libxmljs": "^0.19.7",
-    "puppeteer": "^9.1.1",
+    "libxmljs": "0.19.8",
+    "puppeteer": "^18.0.5",
     "soap": "^0.30.0",
     "xml-js": "^1.6.11"
   },
