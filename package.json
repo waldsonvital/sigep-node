@@ -1,6 +1,6 @@
 {
   "name": "sigep-js",
-  "version": "0.13.3",
+  "version": "0.13.4",
   "description": "Modulo para trabalhar com o SIGEP dos correios",
   "main": "index.js",
   "scripts": {
