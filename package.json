@@ -1,6 +1,6 @@
 {
   "name": "sigep-js",
-  "version": "0.13.4",
+  "version": "0.14.0",
   "description": "Modulo para trabalhar com o SIGEP dos correios",
   "main": "index.js",
   "scripts": {
@@ -18,16 +18,16 @@
   "author": "Waldson Vital Dos Santos",
   "license": "ISC",
   "dependencies": {
-    "bwip-js": "^2.0.6",
-    "ejs": "^3.0.1",
+    "bwip-js": "^3.3.0",
+    "ejs": "^3.1.9",
     "libxmljs": "0.19.8",
-    "puppeteer": "^18.0.5",
-    "soap": "^0.30.0",
+    "puppeteer": "^19.7.5",
+    "soap": "^1.0.0",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
-    "jest": "^25.1.0"
+    "jest": "^29.5.0"
   }
 }

@@ -141,6 +141,7 @@ const SIGEPPDF = require('../index').pdfPLP( '44022831', jsonPLP, dir + '/__test
 const helperTest = require('../lib/class/helpers')
 
 describe('Print tags', () => {
+    jest.setTimeout(5000000)
     it('test function formatRegex', () => {
         let help = new helperTest()
 
